@@ -40,21 +40,21 @@ for row in sheet:
 			if ptr >= 0 and score[ptr] <= total:
 				sheet.cell(row = row_id, column = 8).value = "A+"
 			else:
-				sheet.cell(row = row_id, column = 8).value = "A"
+				sheet.cell(row = row_id, column = 8).value = "A0"
 		elif b_pointer >= 0 and score[b_pointer] <= total:
 			ptr = a_pointer + ((b_pointer + 1) - (a_pointer + 1)) // 2 
 			ptr = move_pointer(ptr)
 			if ptr > a_pointer and score[ptr] <= total:
 				sheet.cell(row = row_id, column = 8).value = "B+"
 			else:
-				sheet.cell(row = row_id, column = 8).value = "B"
+				sheet.cell(row = row_id, column = 8).value = "B0"
 		else:
 			ptr = b_pointer + (len(score) - (b_pointer + 1)) // 2 
 			ptr = move_pointer(ptr)
 			if ptr > b_pointer and score[ptr] <= total:
                                 sheet.cell(row = row_id, column = 8).value = "C+"
 			else:
-				sheet.cell(row = row_id, column = 8).value = "C"
+				sheet.cell(row = row_id, column = 8).value = "C0"
 	row_id += 1
 
 wb.save("student.xlsx")
