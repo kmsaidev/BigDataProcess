@@ -18,7 +18,7 @@ with open(input, "rt") as fp:
 		temp = data[1].split("/")
 		day = calendar.weekday(int(temp[2]), int(temp[0]), int(temp[1]))
 		dow = dayofweek[day]
-		info = data[0], dow
+		info = (data[0], dow)
 		if info not in dic:
 			dic[info] = Quantity(int(data[2]), int(data[3]))
 		else:
